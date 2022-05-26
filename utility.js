@@ -7,13 +7,13 @@ const teams= [];
 export const solution = (outcome, repetition) => {
     data.forEach(team => {
         var count = 0;
-        team.Results.forEach(result => {
-            result == outcome ? count++ : count = 0;
+        for(var i=0;i<5;i++) {
+            team.Results[i]== outcome ? count++ : count = 0;
             if (count == repetition) {
                 teams.push(team);
-                return;
+                return ;
             }
-        })
+        }
     })
     return teams;
 }
@@ -25,3 +25,4 @@ export const average = () => {
     })
     return sum / teams.length;
 }
+

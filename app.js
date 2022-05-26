@@ -12,6 +12,7 @@ try {
     count = parseInt(count);
     if (typeof count != 'number') throw "Invalid count. Enter a number";
 
+console.time("Execution Time");
     const teams = solution(outcome, count);
 
     if (teams.length == 0) {
@@ -19,8 +20,9 @@ try {
     } else
         console.log(teams);
 
-    const averagePoints = average();
+    const averagePoints = Math.floor(average());
     console.log("average points of teams are: " + averagePoints);
+    console.timeEnd("Execution Time");
 
 } catch (e) {
     console.log(e);
