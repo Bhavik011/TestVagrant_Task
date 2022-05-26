@@ -1,22 +1,14 @@
-import {
-    data
-} from './data.js';
-const teams = [];
+import {solution,average} from './utility.js';
 
-const solution = (outcome, repetition) => {
-    data.forEach((team) => {
-        var count = 0;
-        team.Results.forEach((result) => {
-            result == outcome ? count++ : count = 0;
-            if (count == repetition) {
-                teams.push(team);
-                return;
-            }
-        })
-    })
-}
-solution('W', 2);
+const outcome ='W'  //'W','L
+const count=2; 
+
+const teams = solution(outcome, count);
+
 if (teams.length == 0) {
     console.log('No teams found');
 } else
     console.log(teams);
+
+    const averagePoints=average();
+    console.log("average points of teams are: " + averagePoints);
